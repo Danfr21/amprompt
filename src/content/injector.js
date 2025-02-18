@@ -1,0 +1,1 @@
+// This script is just a placeholder to trigger the background script 
