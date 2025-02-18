@@ -1,5 +1,5 @@
 {
-  "name": "Svelete Tailwind Chrome Extension",
+  "name": "Svelte Tailwind Chrome Extension",
   "description": "Sample Extension using Svelte and Tailwind",
   "version": "1.0",
   "manifest_version": 3,
@@ -9,5 +9,24 @@
   "chrome_url_overrides": {
     "newtab": "src/new-tab/index.html"
   },
-  "permissions": ["storage"]
+  "permissions": ["storage", "tabs", "scripting","activeTab"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://promptimize.2nddanfr.workers.dev/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content.js",
+        "index.js",
+        "components/*.svelte",
+        "src/bridge.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

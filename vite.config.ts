@@ -5,4 +5,19 @@ import manifest from "./manifest.json";
 
 export default defineConfig({
   plugins: [svelte(), crx({ manifest })],
+  build: {
+    rollupOptions: {
+      input: {
+        background: 'src/background.js',
+        content: 'src/content/index.js', // Add this line to include your content script
+        popup: 'src/popup/index.html',
+        newTab: 'src/new-tab/index.html'
+      },
+      output: {
+        entryFileNames: "[name].js",
+        chunkFileNames: "[name].js",
+        assetFileNames: "[name][extname]"
+      }
+    }
+  }
 });

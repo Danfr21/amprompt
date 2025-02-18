@@ -1,6 +1,6 @@
-<script lang="ts">
-  export let count: number;
-  let message: string = null;
+<script>
+  export let count;
+  let message = null;
 
   const increment = () => (count += 1);
   const decrement = () => (count -= 1);
@@ -16,15 +16,14 @@
   };
 </script>
 
-<div class=" bg-blue-50 min-w-[20rem] p-4 flex flex-col gap-4">
+<div class="bg-blue-50 min-w-[20rem] p-4 flex flex-col gap-4">
   <p class="text-blue-800 text-xl">
     Current count: <span class="font-extrabold">{count}</span>
   </p>
   <div class="flex items-center gap-2">
     <button on:click={decrement}>-</button>
     <button on:click={increment}>+</button>
-    {#if message}<span class="text-base font-bold text-blue-800">{message}</span
-      >{/if}
+    {#if message}<span class="text-base font-bold text-blue-800">{message}</span>{/if}
     <button class="ml-auto" on:click={handleSave}>Save</button>
   </div>
 </div>
