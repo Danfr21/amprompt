@@ -10,8 +10,6 @@ export default defineConfig({
       input: {
         background: 'src/background.js',
         content: 'src/content/index.js', // Add this line to include your content script
-        popup: 'src/popup/index.html',
-        newTab: 'src/new-tab/index.html'
       },
       output: {
         entryFileNames: "[name].js",

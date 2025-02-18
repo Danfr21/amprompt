@@ -1,13 +1,19 @@
 {
-  "name": "Svelte Tailwind Chrome Extension",
-  "description": "Sample Extension using Svelte and Tailwind",
+  "name": "Promptimize",
+  "description": "Enhance your prompts in a click",
   "version": "1.0",
   "manifest_version": 3,
-  "action": {
-    "default_popup": "src/popup/index.html"
+  "icons": {
+    "16": "public/icons/icon16.png",
+    "48": "public/icons/icon48.png",
+    "128": "public/icons/icon128.png"
   },
-  "chrome_url_overrides": {
-    "newtab": "src/new-tab/index.html"
+  "action": {
+    "default_icon": {
+      "16": "public/icons/icon16.png",
+      "48": "public/icons/icon48.png",
+      "128": "public/icons/icon128.png"
+    }
   },
   "permissions": ["storage", "tabs", "scripting","activeTab"],
   "background": {
@@ -22,7 +28,6 @@
     {
       "resources": [
         "content.js",
-        "index.js",
         "components/*.svelte",
         "src/bridge.js"
       ],
