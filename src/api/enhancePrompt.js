@@ -9,7 +9,8 @@ export function enhancePrompt(prompt) {
         if (event.data.message && event.data.message.error) {
           reject(event.data.message.error);
         } else {
-          resolve(event.data.message.optimizedPrompt);
+          const optimizedPrompt = event.data.message.optimizedPrompt.replace(/^(\*+)/, "").replace("Optimized Prompt:", "").trim().replace(/['"]/g, '');
+          resolve(optimizedPrompt);
         }
       }
     }

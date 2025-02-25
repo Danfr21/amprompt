@@ -85,7 +85,7 @@ function injectButton() {
     function checkIfTextareaIsEmpty() {
       const textareaContainer = document.getElementById('prompt-textarea');
       if (textareaContainer) {
-        const placeholderP = textareaContainer.querySelector('p.placeholder[data-placeholder="Message ChatGPT"]');
+        const placeholderP = textareaContainer.querySelector('p.placeholder[data-placeholder="Message ChatGPT"], p.placeholder[data-placeholder="Ask anything"]');
         
         if (placeholderP) {
           enhancePromptButtonInstance.resetComponent(); // Directly call the resetComponent function

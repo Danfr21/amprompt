@@ -1,6 +1,6 @@
 {
-  "name": "Promptimize",
-  "description": "Enhance your prompts in a click",
+  "name": "AmPrompt",
+  "description": "Amplify your prompt in a click",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
@@ -15,7 +15,7 @@
       "128": "public/icons/icon128.png"
     }
   },
-  "permissions": ["storage", "tabs", "scripting","activeTab"],
+  "permissions": ["scripting"],
   "background": {
     "service_worker": "src/background.js"
   },

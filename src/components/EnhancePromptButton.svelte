@@ -14,7 +14,7 @@
         try {
           const originalPrompt = Array.from(paragraphs).map(p => p.innerText).join('\n');
           console.log('originalPrompt', originalPrompt);
-          const enhanced = await enhancePrompt(originalPrompt);
+          const enhanced = await enhancePrompt(originalPrompt.trim());
           // Remove any leftover <p> elements after updating
           const updatedParagraphs = enhanced.split('\n').map(text => {
             const p = document.createElement('p');
@@ -64,14 +64,11 @@
   }
 </script>
 
-<div class="relative">
-  <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black text-gray-100 text-center normal-case text-sm font-semibold rounded-lg opacity-0 peer-hover:opacity-100 transition-opacity duration-150 delay-500 whitespace-nowrap">
-    Optimize your prompt
-  </div>
+<div class="relative group">
   <button
-    class="peer relative flex h-9 px-3 font-semibold gap-1 items-center justify-center rounded-full bg-black text-white transition-colors focus-visible:outline-none focus-visible:outline-black disabled:text-gray-50 disabled:opacity-50 can-hover:hover:opacity-70 dark:bg-white dark:text-black {loading ? 'opacity-50' : ''}"
-    on:click={handleClick}
-    disabled={disabled}
+  class="peer relative flex h-9 px-3 font-semibold gap-1 items-center text-base justify-center rounded-full bg-black text-white transition-colors focus-visible:outline-none focus-visible:outline-black disabled:text-gray-50 disabled:opacity-50 can-hover:hover:opacity-70 dark:bg-white dark:text-black {loading ? 'opacity-50' : ''}"
+  on:click={handleClick}
+  disabled={disabled}
   >
   {#if !postEnhance}
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
@@ -88,4 +85,9 @@
     Revert
   {/if}
   </button>
+  <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black text-gray-100 text-center normal-case text-sm font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-150 delay-500 whitespace-nowrap pointer-events-none">
+    {postEnhance ? 'Go back to original prompt' : 'Optimize your prompt'}
+  </div>
 </div>
+
+
