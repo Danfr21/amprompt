@@ -1,9 +1,5 @@
-# Svelte + TS + Vite + Tailwind + CRXJS
+# AmPrompt
 
-## Running the app
-1. `npm install`
-2. Create distributable files using `npm run dev` OR `npm run build`
-3. Open chrome://extensions/
-4. Enable Developer Mode
-5. Click `Load Unpacked`
-6. Point to the `dist` folder
+This is the github repo for the AmPrompt chrome extension.
+
+Link: https://chromewebstore.google.com/detail/amprompt/aodfodchcdhnadgclbggfbmfbohkfolm?authuser=3&hl=en
